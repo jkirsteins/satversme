@@ -32,6 +32,8 @@
 		"webpack-cli": "^3.3.12"
 	},
 	"dependencies": {
-		"@tailwindcss/typography": "^0.4.0"
+		"@tailwindcss/typography": "^0.4.0",
+		"markdown-it": "^12.0.4",
+		"markdown-it-emoji": "^2.0.0"
 	}
 }

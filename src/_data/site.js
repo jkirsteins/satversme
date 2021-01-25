@@ -1,11 +1,11 @@
 module.exports = {
-  "title": "Web Starter",
-  "description": "Minimal boilerplate for new projects built with Eleventy, Tailwind, PurgeCSS and PostCSS",
-  "url": "https://webstarter.chriscollins.me",
-  "author": "Chris Collins",
+  "title": "Latvijas Republikas Satversme",
+  "description": "Latvijas Republikas Satversme",
+  "url": "https://konstitucija.lv",
+  "author": "Jānis Kiršteins",
   "meta_data": {
-    "twitter": "@scottishstoater",
-    "default_social_image": "/static/default_social_image.jpg"
+    "twitter": "@jkirsteins",
+    "default_social_image": "/static/coatofarms.png"
   },
   "env": process.env.ELEVENTY_ENV === 'production'
 }

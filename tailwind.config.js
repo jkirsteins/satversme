@@ -1,3 +1,5 @@
+const typography = require('@tailwindcss/typography')
+console.log(typography);
 module.exports = {
   theme: {
     extend: {
@@ -17,9 +19,11 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
   purge: process.env.NODE_ENV === 'production' ? {
     enabled: true,
-    content: ['src/**/*.njk', 'src/**/*.js'],
+    content: ['src/**/*.njk', 'src/**/*.js', 'src/**/*.md'],
   } : {}
 }

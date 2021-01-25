@@ -6,7 +6,7 @@ module.exports = function (eleventyConfig) {
     // Folders to copy to build dir (See. 1.1)
     eleventyConfig.addPassthroughCopy("src/static");
 
-    // Filters 
+    // Filters
     Object.keys(filters).forEach((filterName) => {
         eleventyConfig.addFilter(filterName, filters[filterName])
     })
@@ -16,6 +16,8 @@ module.exports = function (eleventyConfig) {
         eleventyConfig.addTransform(transformName, transforms[transformName])
     })
 
+    eleventyConfig.addPassthroughCopy({ "./src/favicon.ico": "./favicon.ico" });
+
     // Collections
     Object.keys(collections).forEach((collectionName) => {
         eleventyConfig.addCollection(collectionName, collections[collectionName])
@@ -23,6 +25,17 @@ module.exports = function (eleventyConfig) {
 
     // This allows Eleventy to watch for file changes during local development.
     eleventyConfig.setUseGitIgnore(false);
+
+    let markdownIt = require("markdown-it");
+    let markdownItEmoji = require("markdown-it-emoji");
+    let options = {
+        html: true,
+        breaks: true,
+        linkify: true
+    };
+
+    let markdownLib = markdownIt(options).use(markdownItEmoji);
+    eleventyConfig.setLibrary("md", markdownLib);
 
     return {
         dir: {
